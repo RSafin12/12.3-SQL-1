@@ -28,3 +28,17 @@ SELECT LOWER(first_name), LOWER(last_name), LOWER(REPLACE(first_name, 'L', 'p'))
 FROM customer c
 WHERE active = 1 AND first_name = 'Kelly' OR first_name = 'Willie';
 ```
+
+## Задание 5
+```
+SELECT email,  SUBSTRING_INDEX(email, '@', 1), SUBSTRING_INDEX(email, '@', -1)
+FROM customer c  
+```
+
+## Задание 6
+```
+SELECT email,
+INSERT(SUBSTRING_INDEX(LOWER(email), '@', 1), 1, 1, UPPER(LEFT(SUBSTRING_INDEX(LOWER(email), '@', 1), 1))),
+INSERT(SUBSTRING_INDEX(email, '@', -1), 1, 1, UPPER(LEFT(SUBSTRING_INDEX(email, '@', -1), 1)))
+FROM customer c
+```
