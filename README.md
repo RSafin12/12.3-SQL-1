@@ -17,7 +17,7 @@ WHERE payment_date  BETWEEN '2005-06-15 00:00:00' AND '2005-06-18 00:00:00' AND 
 ```
 SELECT payment_id, amount, payment_date  
 FROM payment p
-WHERE payment_date  BETWEEN CAST('2005-06-15' AS DATE) AND CAST('2005-06-18' AS DATE) AND amount > 10;
+WHERE CAST(payment_date AS DATE)  BETWEEN '2005-06-15' AND '2005-06-18' AND amount > 10;
 ```
 
 
